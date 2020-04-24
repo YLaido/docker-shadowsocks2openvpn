@@ -8,18 +8,20 @@
 
 FROM alpine
 
-COPY sockd.sh /usr/local/bin/
+COPY ssserver.sh /usr/local/bin/
+
+COPY config.json /usr/local/bin/
 
 RUN true \
     && echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && apk add --update-cache dante-server openvpn bash openresolv openrc \
+    && echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && apk add --update-cache openvpn bash openresolv openrc curl shadowsocks-libev \
     && rm -rf /var/cache/apk/* \
-    && chmod a+x /usr/local/bin/sockd.sh \
+    && chmod a+x /usr/local/bin/ssserver.sh \
     && true
 
-COPY sockd.conf /etc/
 
 ENTRYPOINT [ \
     "/bin/bash", "-c", \
-    "cd /etc/openvpn && /usr/sbin/openvpn --config *.conf --script-security 2 --up /usr/local/bin/sockd.sh" \
+    "cd /etc/openvpn && /usr/sbin/openvpn --config *.conf --log /var/log/openvpn.log --script-security 2 --up /usr/local/bin/ssserver.sh" \
     ]
