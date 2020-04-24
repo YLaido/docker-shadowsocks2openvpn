@@ -1,5 +1,5 @@
 ## Intro
-Connect to an openvpn tunnel over a shadowsocks service. The aim is to bridge the traffic between the host and the container.
+Connect to an openvpn tunnel over a shadowsocks service. The aim is to bridge the traffic between the host and the container via a shadowsocks tunnel.
 
 ## Usage
 Download this repo
