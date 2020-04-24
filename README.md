@@ -4,7 +4,7 @@ Connect to an openvpn tunnel over a shadowsocks service. The aim is to bridge th
 ## Usage
 Download this repo
 ```bash
-git clone https://github.com/YLaido/docker-shadowsocks2openvpn
+git clone https://github.com/YLaido/docker-shadowsocks2openvpn && cd docker-shadowsocks2openvpn
 ```
 Change the shadowsocks config accorrdingly or use the default.
 ```bash
