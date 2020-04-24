@@ -1,0 +1,10 @@
+{
+    "server":"0.0.0.0",
+    "server_port": 8081,
+    "password":"123321",
+    "timeout":60,
+    "method":"chacha20-ietf",
+    "fast_open": false,
+    "workers": 5,
+    "prefer_ipv6": false
+}
