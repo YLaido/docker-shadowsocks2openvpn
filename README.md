@@ -1,7 +1,7 @@
 Connect to an openvpn tunnel over a shadowsocks service. The aim is to bridge the traffic between the host and the container.
 
 ## Usage
-
+Download this repo
 ```bash
 git clone https://github.com/YLaido/docker-shadowsocks2openvpn
 ```
